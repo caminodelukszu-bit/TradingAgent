@@ -1,0 +1,13 @@
+# Klucze API i hasła – nie commituj
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Dane lokalne (opcjonalnie)
+*.db
+data/

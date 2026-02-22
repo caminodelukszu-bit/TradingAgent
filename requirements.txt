@@ -1,0 +1,14 @@
+# SofikaMax Agent - zaleznosci glowne
+# Instalacja: py -m pip install -r requirements.txt
+
+# Klucze API z pliku .env (config.py)
+python-dotenv>=1.0.0
+
+# LLM (komentarz analityka - OpenAI / Azure / Ollama-compatible)
+openai>=1.0.0
+
+# Raport PDF (logo, data, sekcja opisowa, wykresy)
+reportlab>=4.0.0
+# Wykresy w PDF (yfinance + matplotlib)
+yfinance>=0.2.0
+matplotlib>=3.5.0

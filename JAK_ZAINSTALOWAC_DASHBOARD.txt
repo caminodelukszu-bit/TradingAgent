@@ -1,0 +1,54 @@
+============================================
+  JAK ZAINSTALOWAĆ DASHBOARD (krok po kroku)
+============================================
+
+Potrzebujesz: pakiet "streamlit" (i "pandas") w Pythonie.
+
+--------------------------------------------
+SPOSÓB 1 – NAJPROSTSZY (dwuklik)
+--------------------------------------------
+
+1. W folderze c:\TradingAgent znajdź plik:
+   instaluj_dashboard.bat
+
+2. Kliknij na niego DWA RAZY (dwuklik).
+
+3. Otworzy się czarne okno (konsola). Poczekaj, aż pojawi się
+   "Gotowe. Teraz kliknij Otwórz Dashboard...".
+
+4. Naciśnij dowolny klawisz, żeby zamknąć okno.
+
+5. W aplikacji SofikaMax Agent kliknij ponownie "Otwórz Dashboard".
+
+--------------------------------------------
+SPOSÓB 2 – Z KONSOLI (VS Code lub CMD)
+--------------------------------------------
+
+1. Otwórz terminal:
+   - w VS Code: Terminal → New Terminal (albo Ctrl+`)
+   - albo: Start → wpisz "cmd" → Enter
+
+2. Wpisz kolejno (po każdej linii Enter):
+
+   cd c:\TradingAgent
+
+   py -m pip install -r requirements-dashboard.txt
+
+3. Poczekaj na koniec instalacji (może minutę).
+
+4. Kliknij "Otwórz Dashboard" w SofikaMax Agent.
+
+--------------------------------------------
+JEŚLI NADAL BŁĄD
+--------------------------------------------
+
+Upewnij się, że używasz tego samego Pythona, z którego uruchamiasz
+SofikaMax Agent. W konsoli wpisz:
+
+   py -m pip install streamlit pandas
+
+Jeśli "py" nie działa, spróbuj:
+
+   python -m pip install streamlit pandas
+
+============================================

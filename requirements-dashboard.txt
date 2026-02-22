@@ -1,0 +1,6 @@
+# Dodatkowe zaleznosci do dashboardu (Trading Desk)
+# Zainstaluj: py -m pip install -r requirements-dashboard.txt
+streamlit>=1.28.0
+pandas>=1.5.0
+yfinance>=0.2.0
+plotly>=5.14.0

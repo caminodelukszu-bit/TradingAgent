@@ -1,0 +1,62 @@
+================================================================================
+  JAK WŁĄCZYĆ RAPORTY NA TELEGRAM (żeby przychodził plik PDF, nie tekst)
+================================================================================
+
+Reportlab masz już zainstalowany. Teraz zrób tylko to:
+
+--------------------------------------------------------------------------------
+KROK 1: Otwórz folder z projektem
+--------------------------------------------------------------------------------
+  • Otwórz Eksplorator plików (ikona folderu na pasku zadań).
+  • Wejdź na dysk C.
+  • Wejdź do folderu: TradingAgent
+  (pełna ścieżka: C:\TradingAgent)
+
+--------------------------------------------------------------------------------
+KROK 2: Uruchom program "launcher"
+--------------------------------------------------------------------------------
+  W folderze C:\TradingAgent znajdź plik:
+
+      launcher.py
+
+  Kliknij na niego PRAWYM przyciskiem myszy.
+  Wybierz: "Otwórz za pomocą"  →  "Python" (albo "Python 3.14" / podobnie).
+
+  Jeśli nie ma "Otwórz za pomocą" / "Python":
+  • Kliknij dwukrotnie LEWYM na launcher.py
+  LUB
+  • Otwórz CMD (czarne okno), wpisz:
+    cd c:\TradingAgent
+    py launcher.py
+    i naciśnij Enter.
+
+  Powinno otworzyć się OKNO Z PRZYCISKAMI (panel SofikaMax Agent).
+
+--------------------------------------------------------------------------------
+KROK 3: Włącz harmonogram
+--------------------------------------------------------------------------------
+  W tym oknie z przyciskami kliknij przycisk:
+
+      "Uruchom agenta (harmonogram 4× dziennie)"
+
+  Harmonogram uruchomi się W TLE – żadnego dodatkowego okna.
+  Przycisk zmieni się na "Zatrzymaj harmonogram" (możesz go kliknąć, żeby wyłączyć).
+  Raporty na Telegram: 07:00, 12:30, 18:30, 20:30 (jako PDF, jeśli masz reportlab).
+
+  Możesz zminimalizować okno SofikaMax Agent – harmonogram dalej działa.
+  Zamknięcie okna SofikaMax Agent zatrzymuje harmonogram.
+
+  Uwaga: To działa tylko gdy komputer jest włączony. Aby dostawać raporty
+  przy WYŁĄCZONYM PC, trzeba uruchomić raporty w chmurze (VPS + cron).
+  Instrukcja: RAPORTY_PRZY_WYLACZONYM_PC.md
+
+--------------------------------------------------------------------------------
+PODSUMOWANIE
+--------------------------------------------------------------------------------
+  1. Folder C:\TradingAgent
+  2. Uruchom launcher.py (prawy przycisk → Otwórz za pomocą → Python)
+  3. Kliknij "Uruchom agenta (harmonogram 4× dziennie)" – działa w tle, bez nowych okien
+
+  Gotowe.
+
+================================================================================
