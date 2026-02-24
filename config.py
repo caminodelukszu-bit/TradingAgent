@@ -26,16 +26,25 @@ if _env_path.exists():
     except ImportError:
         pass
 
+
+def _env(en_key: str, pl_key: str = None) -> str:
+    """Wartość zmiennej: najpierw angielska nazwa (en_key), potem opcjonalnie polska (pl_key)."""
+    v = os.environ.get(en_key, "").strip()
+    if not v and pl_key:
+        v = os.environ.get(pl_key, "").strip()
+    return v or ""
+
+
 # -----------------------------------------------------------------------------
-# Klucze API i hasła (z .env lub zmiennych środowiskowych)
+# Klucze API i hasły (z .env lub zmiennych środowiskowych)
 # -----------------------------------------------------------------------------
 # FRED – dane makro (St. Louis Fed). Używane przez: macro_engine, surprise_engine.
-FRED_API_KEY = os.environ.get("FRED_API_KEY", "")
+FRED_API_KEY = _env("FRED_API_KEY", "Klucz_API_FRED")
 
 # MyFXBook – sentyment retail (Layer 4b). Limit 100 zapytan/24h. Puste = neutral.
 # Używane przez: sentiment_engine.
-MYFXBOOK_EMAIL    = os.environ.get("MYFXBOOK_EMAIL", "")
-MYFXBOOK_PASSWORD = os.environ.get("MYFXBOOK_PASSWORD", "")
+MYFXBOOK_EMAIL    = _env("MYFXBOOK_EMAIL", "")
+MYFXBOOK_PASSWORD = _env("MYFXBOOK_PASSWORD", "HASŁO_MOJEJ_KSIĄŻKI_FX")
 
 # Waluty
 CURRENCIES = ["EUR", "GBP", "JPY", "AUD", "CAD", "CHF", "NZD"]
@@ -137,8 +146,8 @@ OFFICIAL_FEEDS_EXTRA = []
 # Claude / Cuade AI (analiza danych historycznych z archiwum)
 # -----------------------------------------------------------------------------
 # Claude (Anthropic) – analiza archiwum + fallback sentymentu. Z .env: CLAUDE_API_KEY. Format: sk-ant-api03-...
-# Pusty = analiza przez Claude wyłączona.
-CLAUDE_API_KEY = os.environ.get("CLAUDE_API_KEY", "")
+# Pusty = analiza przez Claude wyłączona. (Railway: działa też polska nazwa Klucz_API_CLAUDE.)
+CLAUDE_API_KEY = _env("CLAUDE_API_KEY", "Klucz_API_CLAUDE")
 # Wlacz/wylacz analize (True = Claude czyta archiwum i dodaje wnioski do raportu).
 CLAUDE_ENABLED = True
 # Model: claude-3-5-sonnet-20241022 (domyslny), claude-3-haiku (szybszy, tanszy).

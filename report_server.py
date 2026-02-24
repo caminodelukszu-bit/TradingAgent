@@ -31,7 +31,8 @@ try:
 except Exception:
     pass
 
-REPORT_CRON_TOKEN = os.environ.get("REPORT_CRON_TOKEN", "").strip()
+# Token do wywołania /report (cron-job.org). Działa też polska nazwa RAPORT_TOKEN_CRONU (Railway).
+REPORT_CRON_TOKEN = (os.environ.get("REPORT_CRON_TOKEN") or os.environ.get("RAPORT_TOKEN_CRONU") or "").strip()
 # Railway i inne chmury ustawiają PORT – używamy go, gdy jest
 REPORT_SERVER_PORT = int(os.environ.get("PORT", os.environ.get("REPORT_SERVER_PORT", "8765")))
 ALLOWED_TYPES = ("PORANNY", "POLUDNIOWY", "WIECZORNY", "NOCNY")
